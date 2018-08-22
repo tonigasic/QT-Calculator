@@ -17,6 +17,16 @@ public:
 
 private:
     Ui::MainWindow *ui;
+
+private slots:
+    void numberPressed();
+    void commaPressed();
+    void predznakPressed();
+
+
 };
+
+
+
 
 #endif // MAINWINDOW_H

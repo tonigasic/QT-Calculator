@@ -25,6 +25,7 @@
     </property>
     <property name="font">
      <font>
+      <family>Times New Roman</family>
       <pointsize>18</pointsize>
      </font>
     </property>
@@ -33,9 +34,8 @@
   	qproperty-alignment: 'AlignVCenter | AlignRight';
   	border: 1px solid grey;
   	 background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 #e6e6e6, stop: 0.3 #595959
-									  stop: 0.7 #595959, stop: 1.0 #e6e6e6);
-	color : white;
+                                      stop: 0 #8EE4Af, stop: 1 #edf5e1);
+	color : black;
 }
 
 
@@ -45,7 +45,7 @@
      <string>0</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QPushButton" name="pushButton_remove">
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -56,24 +56,27 @@
     </property>
     <property name="font">
      <font>
+      <family>Times New Roman</family>
       <pointsize>18</pointsize>
      </font>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
     border: 1px solid gray;
-	background-color: #767676;
+	/*background-color: #659DBD;*/
+	background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #4b8f69, stop: 1 #9bc1ac);
 }
 QPushButton:pressed {
     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 #525252, stop: 1 #9f9f9f);
+                                      stop: 0 #9bc1ac, stop: 1 #4b8f69);
 }</string>
     </property>
     <property name="text">
      <string>C</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_2">
+   <widget class="QPushButton" name="pushButton_predznak">
     <property name="geometry">
      <rect>
       <x>100</x>
@@ -84,24 +87,27 @@ QPushButton:pressed {
     </property>
     <property name="font">
      <font>
+      <family>Times New Roman</family>
       <pointsize>18</pointsize>
      </font>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
     border: 1px solid gray;
-	background-color: #767676;
+	/*background-color: #659DBD;*/
+	background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #4b8f69, stop: 1 #9bc1ac);
 }
 QPushButton:pressed {
     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 #525252, stop: 1 #9f9f9f);
+                                      stop: 0 #9bc1ac, stop: 1 #4b8f69);
 }</string>
     </property>
     <property name="text">
      <string>+/-</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_3">
+   <widget class="QPushButton" name="pushButton_percentage">
     <property name="geometry">
      <rect>
       <x>200</x>
@@ -112,24 +118,27 @@ QPushButton:pressed {
     </property>
     <property name="font">
      <font>
+      <family>Times New Roman</family>
       <pointsize>18</pointsize>
      </font>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
     border: 1px solid gray;
-	background-color: #767676;
+	/*background-color: #659DBD;*/
+	background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #4b8f69, stop: 1 #9bc1ac);
 }
 QPushButton:pressed {
     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 #525252, stop: 1 #9f9f9f);
+                                      stop: 0 #9bc1ac, stop: 1 #4b8f69);
 }</string>
     </property>
     <property name="text">
      <string>%</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_4">
+   <widget class="QPushButton" name="pushButton_division">
     <property name="geometry">
      <rect>
       <x>300</x>
@@ -140,26 +149,31 @@ QPushButton:pressed {
     </property>
     <property name="font">
      <font>
+      <family>Times New Roman</family>
       <pointsize>18</pointsize>
      </font>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
-  background-color: rgb(255, 151, 57);
-  color: white; 
-  border: 1px solid gray;
+    border: 1px solid gray;
+color:white;
+	/*background-color: #BC986A;*/
+	 background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #05386b, stop: 1 #6987a6);
 }
-
 QPushButton:pressed {
     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 #FF7832, stop: 1 #595959);
-}</string>
+                                      stop: 0 #6987a6, stop: 1 #05386b 	);
+}
+
+
+</string>
     </property>
     <property name="text">
      <string>÷</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_5">
+   <widget class="QPushButton" name="pushButton_8">
     <property name="geometry">
      <rect>
       <x>100</x>
@@ -170,24 +184,29 @@ QPushButton:pressed {
     </property>
     <property name="font">
      <font>
+      <family>Times New Roman</family>
       <pointsize>18</pointsize>
      </font>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
-    border: 1px solid gray;
-	background-color: #4f4f4f;
+	background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #328775, stop: 1 #87c0b4);
+  /*background-color: #8D8741;*/
+  color: black; 
+  border: 1px solid gray;
 }
+
 QPushButton:pressed {
     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 #373737, stop: 1 #606060);
+                                      stop: 0 #87c0b4, stop: 1 #328775);
 }</string>
     </property>
     <property name="text">
      <string>8</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_6">
+   <widget class="QPushButton" name="pushButton_multiply">
     <property name="geometry">
      <rect>
       <x>300</x>
@@ -198,26 +217,31 @@ QPushButton:pressed {
     </property>
     <property name="font">
      <font>
+      <family>Times New Roman</family>
       <pointsize>18</pointsize>
      </font>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
-  background-color: rgb(255, 151, 57);
-  color: white; 
-  border: 1px solid gray;
+    border: 1px solid gray;
+color:white;
+	/*background-color: #BC986A;*/
+	 background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #05386b, stop: 1 #6987a6);
 }
-
 QPushButton:pressed {
     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 #FF7832, stop: 1 #FF9739);
-}</string>
+                                      stop: 0 #6987a6, stop: 1 #05386b 	);
+}
+
+
+</string>
     </property>
     <property name="text">
-     <string>X</string>
+     <string>x</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_7">
+   <widget class="QPushButton" name="pushButton_9">
     <property name="geometry">
      <rect>
       <x>200</x>
@@ -228,24 +252,29 @@ QPushButton:pressed {
     </property>
     <property name="font">
      <font>
+      <family>Times New Roman</family>
       <pointsize>18</pointsize>
      </font>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
-    border: 1px solid gray;
-	background-color: #4f4f4f;
+	background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #328775, stop: 1 #87c0b4);
+  /*background-color: #8D8741;*/
+  color: black; 
+  border: 1px solid gray;
 }
+
 QPushButton:pressed {
     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 #373737, stop: 1 #606060);
+                                      stop: 0 #87c0b4, stop: 1 #328775);
 }</string>
     </property>
     <property name="text">
      <string>9</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_8">
+   <widget class="QPushButton" name="pushButton_7">
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -256,24 +285,29 @@ QPushButton:pressed {
     </property>
     <property name="font">
      <font>
+      <family>Times New Roman</family>
       <pointsize>18</pointsize>
      </font>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
-    border: 1px solid gray;
-	background-color: #4f4f4f;
+	background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #328775, stop: 1 #87c0b4);
+  /*background-color: #8D8741;*/
+  color: black; 
+  border: 1px solid gray;
 }
+
 QPushButton:pressed {
     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 #373737, stop: 1 #606060);
+                                      stop: 0 #87c0b4, stop: 1 #328775);
 }</string>
     </property>
     <property name="text">
      <string>7</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_9">
+   <widget class="QPushButton" name="pushButton_5">
     <property name="geometry">
      <rect>
       <x>100</x>
@@ -284,24 +318,29 @@ QPushButton:pressed {
     </property>
     <property name="font">
      <font>
+      <family>Times New Roman</family>
       <pointsize>18</pointsize>
      </font>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
-    border: 1px solid gray;
-	background-color: #4f4f4f;
+	background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #328775, stop: 1 #87c0b4);
+  /*background-color: #8D8741;*/
+  color: black; 
+  border: 1px solid gray;
 }
+
 QPushButton:pressed {
     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 #373737, stop: 0.5 #606060);
+                                      stop: 0 #87c0b4, stop: 1 #328775);
 }</string>
     </property>
     <property name="text">
      <string>5</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_10">
+   <widget class="QPushButton" name="pushButton_minus">
     <property name="geometry">
      <rect>
       <x>300</x>
@@ -312,26 +351,31 @@ QPushButton:pressed {
     </property>
     <property name="font">
      <font>
+      <family>Times New Roman</family>
       <pointsize>18</pointsize>
      </font>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
-  background-color: rgb(255, 151, 57);
-  color: white; 
-  border: 1px solid gray;
+    border: 1px solid gray;
+color:white;
+	/*background-color: #BC986A;*/
+	 background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #05386b, stop: 1 #6987a6);
 }
-
 QPushButton:pressed {
     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 #FF7832, stop: 1 #FF9739);
-}</string>
+                                      stop: 0 #6987a6, stop: 1 #05386b 	);
+}
+
+
+</string>
     </property>
     <property name="text">
      <string>-</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_11">
+   <widget class="QPushButton" name="pushButton_6">
     <property name="geometry">
      <rect>
       <x>200</x>
@@ -342,24 +386,29 @@ QPushButton:pressed {
     </property>
     <property name="font">
      <font>
+      <family>Times New Roman</family>
       <pointsize>18</pointsize>
      </font>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
-    border: 1px solid gray;
-	background-color: #4f4f4f;
+	background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #328775, stop: 1 #87c0b4);
+  /*background-color: #8D8741;*/
+  color: black; 
+  border: 1px solid gray;
 }
+
 QPushButton:pressed {
     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 #373737, stop: 1 #606060);
+                                      stop: 0 #87c0b4, stop: 1 #328775);
 }</string>
     </property>
     <property name="text">
      <string>6</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_12">
+   <widget class="QPushButton" name="pushButton_4">
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -370,24 +419,29 @@ QPushButton:pressed {
     </property>
     <property name="font">
      <font>
+      <family>Times New Roman</family>
       <pointsize>18</pointsize>
      </font>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
-    border: 1px solid gray;
-	background-color: #4f4f4f;
+	background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #328775, stop: 1 #87c0b4);
+  /*background-color: #8D8741;*/
+  color: black; 
+  border: 1px solid gray;
 }
+
 QPushButton:pressed {
     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 #373737, stop: 1 #606060);
+                                      stop: 0 #87c0b4, stop: 1 #328775);
 }</string>
     </property>
     <property name="text">
      <string>4</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_13">
+   <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
       <x>100</x>
@@ -398,24 +452,29 @@ QPushButton:pressed {
     </property>
     <property name="font">
      <font>
+      <family>Times New Roman</family>
       <pointsize>18</pointsize>
      </font>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
-    border: 1px solid gray;
-	background-color: #4f4f4f;
+	background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #328775, stop: 1 #87c0b4);
+  /*background-color: #8D8741;*/
+  color: black; 
+  border: 1px solid gray;
 }
+
 QPushButton:pressed {
     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 #373737, stop: 1 #606060);
+                                      stop: 0 #87c0b4, stop: 1 #328775);
 }</string>
     </property>
     <property name="text">
      <string>2</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_14">
+   <widget class="QPushButton" name="pushButton_plus">
     <property name="geometry">
      <rect>
       <x>300</x>
@@ -426,26 +485,31 @@ QPushButton:pressed {
     </property>
     <property name="font">
      <font>
+      <family>Times New Roman</family>
       <pointsize>18</pointsize>
      </font>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
-  background-color: rgb(255, 151, 57);
-  color: white; 
-  border: 1px solid gray;
+    border: 1px solid gray;
+color:white;
+	/*background-color: #BC986A;*/
+	 background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #05386b, stop: 1 #6987a6);
 }
-
 QPushButton:pressed {
     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 #FF7832, stop: 1 #FF9739);
-}</string>
+                                      stop: 0 #6987a6, stop: 1 #05386b 	);
+}
+
+
+</string>
     </property>
     <property name="text">
      <string>+</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_15">
+   <widget class="QPushButton" name="pushButton_3">
     <property name="geometry">
      <rect>
       <x>200</x>
@@ -456,25 +520,29 @@ QPushButton:pressed {
     </property>
     <property name="font">
      <font>
+      <family>Times New Roman</family>
       <pointsize>18</pointsize>
      </font>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
-    border: 1px solid gray;
-	 background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 #373737, stop: 1 #606060);
+	background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #328775, stop: 1 #87c0b4);
+  /*background-color: #8D8741;*/
+  color: black; 
+  border: 1px solid gray;
 }
+
 QPushButton:pressed {
     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 #373737, stop: 1 #606060);
+                                      stop: 0 #87c0b4, stop: 1 #328775);
 }</string>
     </property>
     <property name="text">
      <string>3</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_16">
+   <widget class="QPushButton" name="pushButton_1">
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -485,24 +553,29 @@ QPushButton:pressed {
     </property>
     <property name="font">
      <font>
+      <family>Times New Roman</family>
       <pointsize>18</pointsize>
      </font>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
-    border: 1px solid gray;
-	background-color: #4f4f4f;
+	background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #328775, stop: 1 #87c0b4);
+  /*background-color: #8D8741;*/
+  color: black; 
+  border: 1px solid gray;
 }
+
 QPushButton:pressed {
     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 #373737, stop: 1 #606060);
+                                      stop: 0 #87c0b4, stop: 1 #328775);
 }</string>
     </property>
     <property name="text">
      <string>1</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_18">
+   <widget class="QPushButton" name="pushButton_result">
     <property name="geometry">
      <rect>
       <x>300</x>
@@ -513,26 +586,31 @@ QPushButton:pressed {
     </property>
     <property name="font">
      <font>
+      <family>Times New Roman</family>
       <pointsize>18</pointsize>
      </font>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
-  background-color: rgb(255, 151, 57);
-  color: white; 
-  border: 1px solid gray;
+    border: 1px solid gray;
+color:white;
+	/*background-color: #BC986A;*/
+	 background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #05386b, stop: 1 #6987a6);
 }
-
 QPushButton:pressed {
     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 #FF7832, stop: 1 #FF9739);
-}</string>
+                                      stop: 0 #6987a6, stop: 1 #05386b 	);
+}
+
+
+</string>
     </property>
     <property name="text">
      <string>=</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_19">
+   <widget class="QPushButton" name="pushButton_comma">
     <property name="geometry">
      <rect>
       <x>200</x>
@@ -543,24 +621,27 @@ QPushButton:pressed {
     </property>
     <property name="font">
      <font>
+      <family>Times New Roman</family>
       <pointsize>18</pointsize>
      </font>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
     border: 1px solid gray;
-	background-color: #767676;
+	/*background-color: #659DBD;*/
+	background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #4b8f69, stop: 1 #9bc1ac);
 }
 QPushButton:pressed {
     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 #525252, stop: 1 #9f9f9f);
+                                      stop: 0 #9bc1ac, stop: 1 #4b8f69);
 }</string>
     </property>
     <property name="text">
      <string>.</string>
     </property>
    </widget>
-   <widget class="QPushButton" name="pushButton_20">
+   <widget class="QPushButton" name="pushButton_0">
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -571,17 +652,22 @@ QPushButton:pressed {
     </property>
     <property name="font">
      <font>
+      <family>Times New Roman</family>
       <pointsize>18</pointsize>
      </font>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton {
-    border: 1px solid gray;
-	background-color: #4f4f4f;
+	background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 #328775, stop: 1 #87c0b4);
+  /*background-color: #8D8741;*/
+  color: black; 
+  border: 1px solid gray;
 }
+
 QPushButton:pressed {
     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 #373737, stop: 1 #606060);
+                                      stop: 0 #87c0b4, stop: 1 #328775);
 }</string>
     </property>
     <property name="text">
