@@ -22,6 +22,13 @@ private slots:
     void numberPressed();
     void commaPressed();
     void predznakPressed();
+    void percentagePressed();
+    void removePressed();
+    void plusPressed();
+    void minusPressed();
+    void multiplyPressed();
+    void divisionPressed();
+    void resultPressed();
 
 
 };
