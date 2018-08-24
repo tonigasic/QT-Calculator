@@ -3,12 +3,16 @@
 
 
 double firstNumber;
+bool secondNumberTyping=false;
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    this->setFixedSize(this->width(),this->height()); //not allowing to resize window
+
     connect(ui->pushButton_0,SIGNAL(released()),this,SLOT(numberPressed()));
     connect(ui->pushButton_1,SIGNAL(released()),this,SLOT(numberPressed()));
     connect(ui->pushButton_2,SIGNAL(released()),this,SLOT(numberPressed()));
@@ -52,6 +56,9 @@ void MainWindow::resultPressed(){
         label= QString::number(number,'g',15);
         ui->label->setText(label);
         ui->pushButton_plus->setChecked(false);
+        ui->pushButton_division->setChecked(false);
+        ui->pushButton_multiply->setChecked(false);
+        ui->pushButton_minus->setChecked(false);
     }
     else if(ui->pushButton_minus->isChecked()){
 
@@ -59,6 +66,9 @@ void MainWindow::resultPressed(){
         label= QString::number(number,'g',15);
         ui->label->setText(label);
         ui->pushButton_minus->setChecked(false);
+        ui->pushButton_division->setChecked(true);
+        ui->pushButton_multiply->setChecked(false);
+        ui->pushButton_plus->setChecked(false);
     }
     else if(ui->pushButton_multiply->isChecked()){
 
@@ -66,6 +76,9 @@ void MainWindow::resultPressed(){
         label= QString::number(number,'g',15);
         ui->label->setText(label);
         ui->pushButton_multiply->setChecked(false);
+        ui->pushButton_minus->setChecked(false);
+        ui->pushButton_division->setChecked(true);
+        ui->pushButton_plus->setChecked(false);
     }
     else if(ui->pushButton_division->isChecked()){
 
@@ -73,22 +86,39 @@ void MainWindow::resultPressed(){
         label= QString::number(number,'g',15);
         ui->label->setText(label);
         ui->pushButton_division->setChecked(false);
+        ui->pushButton_multiply->setChecked(false);
+        ui->pushButton_minus->setChecked(false);
+        ui->pushButton_plus->setChecked(false);
     }
+    secondNumberTyping=false;
 }
 void MainWindow::divisionPressed(){
     ui->pushButton_division->setChecked(true);
+    ui->pushButton_multiply->setChecked(false);
+    ui->pushButton_minus->setChecked(false);
+    ui->pushButton_plus->setChecked(false);
+
     firstNumber=ui->label->text().toDouble();
 }
 void MainWindow::multiplyPressed(){
     ui->pushButton_multiply->setChecked(true);
+    ui->pushButton_division->setChecked(false);
+    ui->pushButton_minus->setChecked(false);
+    ui->pushButton_plus->setChecked(false);
     firstNumber=ui->label->text().toDouble();
 }
 void MainWindow::minusPressed(){
     ui->pushButton_minus->setChecked(true);
+    ui->pushButton_division->setChecked(false);
+    ui->pushButton_multiply->setChecked(false);
+    ui->pushButton_plus->setChecked(false);
     firstNumber=ui->label->text().toDouble();
 }
 void MainWindow::plusPressed(){
     ui->pushButton_plus->setChecked(true);
+    ui->pushButton_division->setChecked(false);
+    ui->pushButton_minus->setChecked(false);
+    ui->pushButton_multiply->setChecked(false);
     firstNumber=ui->label->text().toDouble();
 }
 void MainWindow::predznakPressed(){
@@ -101,18 +131,20 @@ void MainWindow::predznakPressed(){
     ui->label->setText(label);
 }
 void MainWindow::commaPressed(){
-    // TODO check if comma already exist in label
     QString labelText=ui->label->text();
-    ui->label->setText(labelText + ".");
+    if(!labelText.contains('.')){
+        ui->label->setText(labelText + ".");
+    }
+
 }
 void MainWindow::removePressed(){
-    double number;
-    QString label;
+    ui->pushButton_division->setChecked(false);
+    ui->pushButton_multiply->setChecked(false);
+    ui->pushButton_minus->setChecked(false);
+    ui->pushButton_plus->setChecked(false);
+    secondNumberTyping=false;
+    ui->label->setText("0");
 
-    number= ui->label->text().toDouble();
-    number=number * 0.01;
-    label= QString::number(number,'g',15);
-    ui->label->setText(label);
 }
 void MainWindow::percentagePressed(){
     double number;
@@ -128,14 +160,20 @@ void MainWindow::numberPressed(){
 
     double number;
     QString labelNumber;
-    //TODO something wrong, cannot calculate with two digit numbers
-    if(ui->pushButton_plus->isChecked() || ui->pushButton_minus->isChecked() || ui->pushButton_multiply->isChecked() || ui->pushButton_division->isChecked()){
-        number=pressedButton->text().toDouble();
-    }else{
-       number=(ui->label->text() + pressedButton->text()).toDouble();
-    }
 
-    labelNumber = QString::number(number,'g',15);
+    if((ui->pushButton_plus->isChecked() || ui->pushButton_minus->isChecked() || ui->pushButton_multiply->isChecked() || ui->pushButton_division->isChecked()) && !secondNumberTyping){
+        number=pressedButton->text().toDouble();
+        secondNumberTyping=true;
+        labelNumber = QString::number(number,'g',15);
+    }else{
+        if(ui->label->text().contains('.') && pressedButton->text()== "0"){
+            labelNumber = ui->label->text() + pressedButton->text();
+        }else{
+            number=(ui->label->text() + pressedButton->text()).toDouble();
+            labelNumber = QString::number(number,'g',15);
+        }
+
+    }
 
     ui->label->setText(labelNumber);
 
