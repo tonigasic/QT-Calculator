@@ -4,6 +4,7 @@
 
 double firstNumber;
 bool secondNumberTyping=false;
+bool hasFirstNumber=false;
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -37,7 +38,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->pushButton_minus->setCheckable(true);
     ui->pushButton_multiply->setCheckable(true);
     ui->pushButton_division->setCheckable(true);
-
+    ui->pushButton_result->setCheckable(true);
 }
 
 MainWindow::~MainWindow()
@@ -46,14 +47,13 @@ MainWindow::~MainWindow()
 }
 void MainWindow::resultPressed(){
     QString label;
-    double number,secondNumber;
+    double secondNumber;
 
     secondNumber=ui->label->text().toDouble();
 
     if(ui->pushButton_plus->isChecked()){
-
-        number=firstNumber+secondNumber;
-        label= QString::number(number,'g',15);
+        firstNumber+=secondNumber;
+        label= QString::number(firstNumber,'g',15);
         ui->label->setText(label);
         ui->pushButton_plus->setChecked(false);
         ui->pushButton_division->setChecked(false);
@@ -61,35 +61,34 @@ void MainWindow::resultPressed(){
         ui->pushButton_minus->setChecked(false);
     }
     else if(ui->pushButton_minus->isChecked()){
-
-        number=firstNumber-secondNumber;
-        label= QString::number(number,'g',15);
+        firstNumber-=secondNumber;
+        label= QString::number(firstNumber,'g',15);
         ui->label->setText(label);
         ui->pushButton_minus->setChecked(false);
-        ui->pushButton_division->setChecked(true);
+        ui->pushButton_division->setChecked(false);
         ui->pushButton_multiply->setChecked(false);
         ui->pushButton_plus->setChecked(false);
     }
     else if(ui->pushButton_multiply->isChecked()){
-
-        number=firstNumber*secondNumber;
-        label= QString::number(number,'g',15);
+        firstNumber*=secondNumber;
+        label= QString::number(firstNumber,'g',15);
         ui->label->setText(label);
         ui->pushButton_multiply->setChecked(false);
         ui->pushButton_minus->setChecked(false);
-        ui->pushButton_division->setChecked(true);
+        ui->pushButton_division->setChecked(false);
         ui->pushButton_plus->setChecked(false);
     }
     else if(ui->pushButton_division->isChecked()){
-
-        number=firstNumber/secondNumber;
-        label= QString::number(number,'g',15);
+        firstNumber/=secondNumber;
+        label= QString::number(firstNumber,'g',15);
         ui->label->setText(label);
         ui->pushButton_division->setChecked(false);
         ui->pushButton_multiply->setChecked(false);
         ui->pushButton_minus->setChecked(false);
         ui->pushButton_plus->setChecked(false);
     }
+    ui->pushButton_result->setChecked(true);
+    hasFirstNumber=true;
     secondNumberTyping=false;
 }
 void MainWindow::divisionPressed(){
@@ -97,29 +96,57 @@ void MainWindow::divisionPressed(){
     ui->pushButton_multiply->setChecked(false);
     ui->pushButton_minus->setChecked(false);
     ui->pushButton_plus->setChecked(false);
-
-    firstNumber=ui->label->text().toDouble();
+    if(hasFirstNumber && !ui->pushButton_result->isChecked()){
+        firstNumber/=ui->label->text().toDouble();
+    }else{
+        firstNumber=ui->label->text().toDouble();
+    }
+    ui->pushButton_result->setChecked(false);
+    hasFirstNumber=true;
+    secondNumberTyping=false;
 }
 void MainWindow::multiplyPressed(){
     ui->pushButton_multiply->setChecked(true);
     ui->pushButton_division->setChecked(false);
     ui->pushButton_minus->setChecked(false);
     ui->pushButton_plus->setChecked(false);
-    firstNumber=ui->label->text().toDouble();
+    if(hasFirstNumber && !ui->pushButton_result->isChecked()){
+        firstNumber*=ui->label->text().toDouble();
+    }else{
+        firstNumber=ui->label->text().toDouble();
+    }
+    ui->pushButton_result->setChecked(false);
+    hasFirstNumber=true;
+    secondNumberTyping=false;
 }
 void MainWindow::minusPressed(){
     ui->pushButton_minus->setChecked(true);
     ui->pushButton_division->setChecked(false);
     ui->pushButton_multiply->setChecked(false);
     ui->pushButton_plus->setChecked(false);
-    firstNumber=ui->label->text().toDouble();
+    if(hasFirstNumber && !ui->pushButton_result->isChecked()){
+        firstNumber-=ui->label->text().toDouble();
+    }else{
+        firstNumber=ui->label->text().toDouble();
+    }
+    ui->pushButton_result->setChecked(false);
+    hasFirstNumber=true;
+    secondNumberTyping=false;
 }
 void MainWindow::plusPressed(){
     ui->pushButton_plus->setChecked(true);
     ui->pushButton_division->setChecked(false);
     ui->pushButton_minus->setChecked(false);
     ui->pushButton_multiply->setChecked(false);
-    firstNumber=ui->label->text().toDouble();
+
+    if(hasFirstNumber && !ui->pushButton_result->isChecked()){
+        firstNumber+=ui->label->text().toDouble();
+    }else{
+        firstNumber=ui->label->text().toDouble();
+    }
+    ui->pushButton_result->setChecked(false);
+    hasFirstNumber=true;
+    secondNumberTyping=false;
 }
 void MainWindow::predznakPressed(){
     double number;
@@ -160,6 +187,10 @@ void MainWindow::numberPressed(){
 
     double number;
     QString labelNumber;
+
+    if(ui->pushButton_result->isChecked()){
+        hasFirstNumber=false;
+    }
 
     if((ui->pushButton_plus->isChecked() || ui->pushButton_minus->isChecked() || ui->pushButton_multiply->isChecked() || ui->pushButton_division->isChecked()) && !secondNumberTyping){
         number=pressedButton->text().toDouble();

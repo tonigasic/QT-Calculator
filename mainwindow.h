@@ -30,7 +30,6 @@ private slots:
     void divisionPressed();
     void resultPressed();
 
-
 };
 
 
